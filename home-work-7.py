@@ -4,20 +4,22 @@
 def my_calc(calc_data):
     if '+' in calc_data:
         x_and_y = calc_data.split(' + ')
-        x_and_y = int(x_and_y[0]) + int(x_and_y[1])
+        x_and_y = float(x_and_y[0]) + float(x_and_y[1])
         print(x_and_y)
     elif '-' in calc_data:
         x_and_y = calc_data.split(' - ')
-        x_and_y = int(x_and_y[0]) - int(x_and_y[1])
+        x_and_y = float(x_and_y[0]) - float(x_and_y[1])
         print(x_and_y)
     elif '*' in calc_data:
         x_and_y = calc_data.split(' * ')
-        x_and_y = int(x_and_y[0]) * int(x_and_y[1])
+        x_and_y = float(x_and_y[0]) * float(x_and_y[1])
         print(x_and_y)
     elif '/' in calc_data:
         x_and_y = calc_data.split(' / ')
-        x_and_y = int(x_and_y[0]) / int(x_and_y[1])
-        print(x_and_y)
-
+        try:
+            x_and_y = float(x_and_y[0]) / float(x_and_y[1])
+            print(x_and_y)
+        except ZeroDivisionError:
+            print(' ERRORR X\0 =  ? --> 8')
 data_user = input( '123 + 222, { - + * / }  x" "*" "y       ' )
 my_calc(data_user)
